@@ -1,0 +1,111 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url(fondo.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.playlist {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff; /* White background for the playlist */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  overflow-y: auto; /* Enable scrolling for long playlists */
+  transition: transform 0.2s ease-in-out; /* Animation for hover effect */
+}
+
+.playlist:hover {
+  transform: scale(1.02); /* Slight zoom on hover */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+  display: flex; /* Allow for inline styling of song title and buttons */
+  justify-content: space-between; /* Space items horizontally */
+  align-items: center; /* Align vertically */
+  transition: background-color 0.2s ease; /* Animation for hover effect */
+}
+
+li:hover {
+  background-color: #f2f2f2; /* Light gray background on hover */
+}
+
+.song-title {
+  flex: 1; /* Allow remaining space for the song title */
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between; /* Space buttons horizontally */
+  margin-top: 10px;
+}
+.song-cover {
+  width: 50px; /* Ancho de la imagen */
+  height: 50px; /* Altura de la imagen */
+  object-fit: cover; /* Escalar la imagen para que llene el contenedor sin distorsión */
+  border-radius: 4px; /* Bordes redondeados */
+  margin-right: 10px; /* Margen a la derecha para separar la imagen del texto */
+  transition: transform 0.2s ease-in-out; /* Animación para el efecto de desplazamiento */
+  cursor: pointer; /* Indicar que es un elemento interactivo */
+}
+
+.song-cover:hover {
+  transform: scale(1.1); /* Aumentar ligeramente el tamaño al pasar el cursor */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil al pasar el cursor */
+}
+button {
+  background-color: transparent;
+  color: #007bff; /* Green color */
+  border: 1px solid #57a6fb;
+  padding: 8px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px; /* Rounded corners */
+  transition: background-color 0.2s ease, border-color 0.2s ease; /* Hover effect */
+}
+
+button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.progress-container {
+  width: 100%;
+  height: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #007bff;
+  width: 0; /* Initial width */
+  transition: width 0.1s ease-in-out;
+}
+
+/* Animation for progress bar filling */
+@keyframes progressFill {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.progress-bar.animated {
+  animation: progressFill 1s ease-in-out;
+}
